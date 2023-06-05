@@ -60,6 +60,7 @@ public class BookController {
 
     @DeleteMapping("/delete/{id}")
     public String deleteBook(@PathVariable int id) {
+        System.out.println("Test...");
         repo.deleteById(id);
 
         return "Deleted Successfully";
