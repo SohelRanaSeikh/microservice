@@ -44,6 +44,7 @@ public class BookController {
     @GetMapping("/findBooksBySorting")
     public List<Book> getBooksBySorting(@RequestParam("name") String name) {
         Sort s = Sort.by(Sort.Direction.ASC, name);
+        System.out.println("Test...123...");
         //   Sort s = Sort.by(Sort.Direction.ASC, "name","email",...);
         return repo.findAll(s);
     }
