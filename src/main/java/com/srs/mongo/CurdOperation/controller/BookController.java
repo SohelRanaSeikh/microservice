@@ -76,9 +76,9 @@ public class BookController {
 
         return repo.getBook(name);
     }
-    @GetMapping("/getBookByAddress")
-    public List<Book> getBookByAddress(@RequestParam("cityName") String name) {
+   // @GetMapping("/getBookByAddress")
+    /*public List<Book> getBookByAddress(@RequestParam("cityName") String name) {
 
         return repo.getBookByAddress(name);
-    }
+    }*/
 }
