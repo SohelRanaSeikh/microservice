@@ -21,8 +21,16 @@ public interface MongoDBRepository extends MongoRepository<Book, Integer> {
     @Query("{ authorName: ?0}")
     List<Book> getBook(String name);
 
-//    @Query("{ address.street:abc}")
-//    List<Book> getBookByAddress(String cityName);
+    @Query("{'address.street': /?0/}")
+    List<Book> getBookByAddressUsingLike(String city);
+
+    @Query("{'address.city': /^?0/}")
+    List<Book> getBookByAddressUsingStartWith(String city);
+
+    @Query("{'address.street':?0}")
+    List<Book> getBookByAddress(String cityName);
+
+
    /* List<Book> findByBookNameIsLikes(String name);
     List<Book> findByBookNameIsLikes(String name);
     List<Book> findByBookNameIsLikes(String name);*/

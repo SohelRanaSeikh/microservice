@@ -36,6 +36,21 @@ public class BookController {
         return (Book) repo.findById(id).get();
     }
 
+    @GetMapping("/findBooks")
+    public List<Book> getBookByAddress(@RequestParam("city") String city) {
+
+        return repo.getBookByAddress(city);
+    }
+    @GetMapping("/findBooksUsingLike")
+    public List<Book> getBookByAddressUsingLike(@RequestParam("city") String city) {
+        return repo.getBookByAddressUsingLike(city);
+    }
+
+    @GetMapping("/findBooksUsingStartWith")
+    public List<Book> getBookByAddressUsingStartWith(@RequestParam("city") String city) {
+        return repo.getBookByAddressUsingStartWith(city);
+    }
+
     @GetMapping("/findBooksByName")
     public List<Book> getBooksByName(@RequestParam("name") String name) {
         return repo.findByBookName(name);
@@ -78,7 +93,7 @@ public class BookController {
 
         return repo.getBook(name);
     }
-   // @GetMapping("/getBookByAddress")
+    // @GetMapping("/getBookByAddress")
     /*public List<Book> getBookByAddress(@RequestParam("cityName") String name) {
 
         return repo.getBookByAddress(name);
