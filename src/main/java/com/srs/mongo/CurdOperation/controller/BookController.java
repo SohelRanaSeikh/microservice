@@ -21,7 +21,6 @@ public class BookController {
     @PostMapping("/addBook")
     public String saveBook(@RequestBody Book book) {
         repo.save(book);
-        System.out.println("testing..");
         return "Added Successfully";
     }
 
