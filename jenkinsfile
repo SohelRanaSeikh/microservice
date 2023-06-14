@@ -6,11 +6,20 @@ pipeline {
                 echo 'Welcome to LambdaTest'
             }
         }
+        stage('compile') {
+              steps {
+                      bat 'mvn compile'
+                     }
+                   }
         stage('build') {
                     steps {
                     bat 'mvn install'
-
                     }
                 }
+         stage('test') {
+                  steps {
+                      bat 'mvn test'
+                         }
+                      }
     }
 }
