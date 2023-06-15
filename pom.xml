@@ -73,6 +73,7 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>mongodbdemoproject</finalName>
 	</build>
 
 </project>
