@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  mongodbservice:
+    container_name: mongo-db
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      springboot-mongo-net:
+
+  springboot-mongo-service:
+    container_name: springboot-mongo-service
+    image: sample3
+    ports:
+      - "5155:5155"
+    depends_on:
+      - mongodbservice
+    networks:
+      springboot-mongo-net:
+    restart: on-failure
+
+networks:
+  springboot-mongo-net:
