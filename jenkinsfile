@@ -25,6 +25,7 @@ pipeline {
                              steps {
                                  //bat 'mvn test'
                                  echo 'from quality stage'
+                                 bat 'mvn sonar:sonar'
                                     }
                                  }
     }
