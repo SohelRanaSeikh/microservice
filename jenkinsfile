@@ -25,7 +25,7 @@ pipeline {
                              steps {
                                  //bat 'mvn test'
                                  echo 'from quality stage'
-                                 bat 'mvn sonar:sonar'
+                                 bat 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=Srs@123'
                                     }
                                  }
     }
